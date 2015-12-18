@@ -11,7 +11,7 @@ if parsed.entries:
 	next_pass = parsed.entries[0]
 	pass_title = next_pass.title
 	date_today = strftime("%Y-%m-%d")
-	if date_today not in pass_title:
+	if date_today in pass_title:
 		pass_details = next_pass.description
 		pass_details = pass_details.replace('<br />', '')
 		pass_details = pass_details.encode('utf-8')
