@@ -8,6 +8,7 @@ setup(
     scripts=[],
     install_requires=[
     	'facebook-sdk',
+    	'feedparser',
     ],
     zip_safe=False
 )
