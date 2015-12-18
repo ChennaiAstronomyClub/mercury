@@ -3,10 +3,14 @@ import facebook
 import re
 from time import strftime
 
-feed = "http://spotthestation.nasa.gov/sightings/xml_files/India_None_Chennai.xml"
-graph = facebook.GraphAPI(access_token='')
+with open('access_token', 'r') as file:
+	access_token = file.read()
 
+graph = facebook.GraphAPI(access_token=access_token)
+
+feed = "http://spotthestation.nasa.gov/sightings/xml_files/India_None_Chennai.xml"
 parsed = feedparser.parse(feed)
+
 if parsed.entries:
 	next_pass = parsed.entries[0]
 	pass_title = next_pass.title
