@@ -3,7 +3,7 @@ import facebook
 import re
 from time import strftime
 
-with open('access_token', 'r') as file:
+with open('mercury/mercury/access_token', 'r') as file:
 	access_token = file.read()
 
 graph = facebook.GraphAPI(access_token=access_token)
