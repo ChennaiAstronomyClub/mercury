@@ -24,6 +24,49 @@
 
 <p>Mercury is a bot designed to post ISS Pass details to the Chennai Astronomy Club's Facebook page.</p>
 
+<p>Mercury is named after the Roman god of messages/communication.</p>
+
+<h4>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h4>
+
+<ol>
+<li>facebook-sdk</li>
+<li>feedparser</li>
+<li>Access to a server that allows cron jobs.</li>
+</ol>
+
+<h4>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h4>
+
+<ol>
+<li>Modify the <a href="https://github.com/ChennaiAstronomyClub/mercury/blob/master/mercury/chennai.py#L11">feed source</a>
+to your city. You can find it at <a href="http://spotthestation.nasa.gov/">this website</a>. Click on Location lookup,
+enter the details and click on the RSS button to get the feed.</li>
+<li>Set up a cron job to run this script periodically. Once in a day would be a good choice.
+Do this in the terminal:
+
+<ol>
+<li><code>crontab -e</code></li>
+<li>
+<code>0 10 * * * python mercury/mercury/chennai.py</code> -&gt; this runs the script at 10 AM everyday(change the city as per your needs).</li>
+</ol>
+</li>
+<li>You need to specify an access token to post to the page. To do so,
+
+<ol>
+<li>Create a file named access_token in the mercury directory. Do not give it a file extension.</li>
+<li>Create a new app on Facebook and generate a long lived access token. Refer <a href="http://stackoverflow.com/questions/12168452/long-lasting-fb-access-token-for-server-to-pull-fb-page-info">this</a>
+</li>
+<li>Enter the access token obtained in the file that you created in step 3.1</li>
+</ol>
+</li>
+</ol>
+
+<h4>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h4>
+
+<p>MIT © <a href="http://chennaiastronomyclub.org">Chennai Astronomy Club</a></p>
+
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/ChennaiAstronomyClub/mercury">Mercury</a> is maintained by <a href="https://github.com/ChennaiAstronomyClub">ChennaiAstronomyClub</a>.</span>
 
