@@ -16,11 +16,12 @@ parsed = feedparser.parse(feed)
 if parsed.entries:
 	for entry in parsed.entries:
 		pass_title = entry.title
-		date_tomorrow = date.today() + timedelta(days=1)
+		date_tomorrow = date.today() + timedelta(days=2)
 		date_tomorrow_string = date_tomorrow.strftime("%Y-%m-%d")
 		if date_tomorrow_string in pass_title:
 			pass_details = entry.description
 			pass_details = pass_details.replace('<br />', '')
+			pass_details = pass_details.replace('\t', '')
 			pass_details = pass_details.encode('utf-8')
 			post = "Upcoming ISS Pass!\n" + pass_details
 			poster = flyer.fly(pass_details)
