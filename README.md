@@ -10,7 +10,8 @@ Mercury will help you from now on.
 
 1. facebook-sdk
 2. feedparser
-3. Access to a server that allows cron jobs.
+3. [fly](https://github.com/ChennaiAstronomyClub/fly)
+4. Access to a server that allows cron jobs.
 
 #### Usage
 
